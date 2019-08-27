@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
-{
-    public float speed, jumpForce, goingDownGravity, goingUpGravity;
-    public bool canJump = true;
-    private float new_x;
+public class Movement : MonoBehaviour{
+    public float speed, jumpForce;
     private Rigidbody2D rb;
     
 
@@ -16,28 +13,34 @@ public class Movement : MonoBehaviour
 
     void Update() {
         //get inputs
-        new_x = Input.GetAxisRaw("Horizontal");
+        float x = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space) && canJump) {
+        //Eliminate rotation inertia when touching something but not moving
+        rb.constraints = (x==0&&rb.GetContacts(new ContactPoint2D[10])!=0) ? RigidbodyConstraints2D.FreezeRotation : RigidbodyConstraints2D.None;
+
+        //Move the player
+        rb.velocity = new Vector3(x*speed, rb.velocity.y, 0);
+
+        if (Input.GetKeyDown(KeyCode.Space) && CanJump()) {
             Jump();
         }
-
-        if (rb.velocity.y < 0) {
-            //increase gravity for the faster falling
-            rb.gravityScale = goingDownGravity;
-        } else {
-            rb. gravityScale = goingUpGravity;
-        }
-    }
-
-    void FixedUpdate () {
-        //move the gameobject
-        gameObject.transform.position += new Vector3 (new_x*speed, gameObject.transform.position.y, gameObject.transform.position.z) * Time.fixedDeltaTime;
     }
 
     void Jump () {
         rb.AddForce(new Vector3(0,jumpForce,0));
     }
 
-    
+    bool CanJump(){
+        ContactPoint2D[] contacts = new ContactPoint2D[10];
+        CircleCollider2D collider = rb.GetComponent<CircleCollider2D>();
+        int count = collider.GetContacts(contacts);
+        for (int i = 0; i < 10; i++){
+            float dx = collider.bounds.center.x - contacts[i].point.x;
+            float dy = collider.bounds.center.y - contacts[i].point.y;
+            if (dy > 0 && dy >= Mathf.Abs(dx) && i < count){
+                return true;
+            }
+        }
+        return false;
+    }
 }
