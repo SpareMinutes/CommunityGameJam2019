@@ -7,6 +7,10 @@ public class Menu : MonoBehaviour{
     private GameObject[] Screens;
 
     public void Start() {
+        Invoke("OpenMenu", 0.001f);
+    }
+
+    public void OpenMenu() {
         RestoreSettings();
         SetActiveScreen(0);
     }
@@ -40,6 +44,5 @@ public class Menu : MonoBehaviour{
 
     public void CloseMenu() {
         SceneManager.UnloadSceneAsync("Menu");
-        Debug.Log("closed");
     }
 }

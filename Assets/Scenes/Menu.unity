@@ -314,6 +314,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41462131}
   m_CullTransparentMesh: 0
+--- !u!1 &51425362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 51425363}
+  m_Layer: 0
+  m_Name: Useless
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &51425363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51425362}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.8946977, y: -15.774116, z: -0.83307976}
+  m_LocalScale: {x: 64, y: 64, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1371028281}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &54523212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,7 +1182,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -1413,7 +1443,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: UpdateFloat
         m_Mode: 5
         m_Arguments:
@@ -1722,7 +1752,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -2279,7 +2309,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -2380,7 +2410,7 @@ MonoBehaviour:
   - {fileID: 1260981411}
   - {fileID: 1611148570}
   - {fileID: 737626128}
-  - {fileID: 0}
+  - {fileID: 51425362}
 --- !u!1 &540700307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,7 +2645,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -2713,7 +2743,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -2931,7 +2961,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: UpdateFloat
         m_Mode: 5
         m_Arguments:
@@ -3549,7 +3579,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777649412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.20246516, y: -0.18575543, z: -0.1836851}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4715,7 +4745,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: UpdateFloat
         m_Mode: 5
         m_Arguments:
@@ -4812,7 +4842,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -4910,7 +4940,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -5871,7 +5901,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -6119,7 +6149,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -6960,6 +6990,7 @@ RectTransform:
   - {fileID: 1260981412}
   - {fileID: 1611148571}
   - {fileID: 737626129}
+  - {fileID: 51425363}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7052,7 +7083,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -7306,7 +7337,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -8139,7 +8170,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -9322,7 +9353,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
@@ -9499,7 +9530,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 777649413}
         m_MethodName: ToggleBool
         m_Mode: 5
         m_Arguments:
