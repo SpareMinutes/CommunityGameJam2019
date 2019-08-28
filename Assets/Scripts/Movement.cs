@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour{
     public float speed, jumpForce;
@@ -12,6 +13,8 @@ public class Movement : MonoBehaviour{
     }
 
     void Update() {
+        if(SceneManager.sceneCount != 1)
+            return;
         //get inputs
         float x = Input.GetAxisRaw("Horizontal");
 
@@ -19,10 +22,14 @@ public class Movement : MonoBehaviour{
         rb.constraints = (x==0&&rb.GetContacts(new ContactPoint2D[10])!=0) ? RigidbodyConstraints2D.FreezeRotation : RigidbodyConstraints2D.None;
 
         //Move the player
-        rb.velocity = new Vector3(x*speed, rb.velocity.y, 0);
+        rb.velocity = new Vector3(x*speed, Mathf.Min(rb.velocity.y, 15), 0);
 
         if (Input.GetKeyDown(KeyCode.Space) && CanJump()) {
             Jump();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
         }
     }
 
@@ -31,6 +38,7 @@ public class Movement : MonoBehaviour{
     }
 
     bool CanJump(){
+        return true;
         ContactPoint2D[] contacts = new ContactPoint2D[10];
         CircleCollider2D collider = rb.GetComponent<CircleCollider2D>();
         int count = collider.GetContacts(contacts);

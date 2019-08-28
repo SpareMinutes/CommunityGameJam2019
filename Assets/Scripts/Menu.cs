@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour{
     [SerializeField]
@@ -35,5 +36,10 @@ public class Menu : MonoBehaviour{
         GameObject.Find("Mipmaps").GetComponent<Slider>().value = Settings.GetFloat("Mipmaps");
         GameObject.Find("Sounds").GetComponent<Slider>().value = Settings.GetFloat("Sounds");
         GameObject.Find("Music").GetComponent<Slider>().value = Settings.GetFloat("Music");
+    }
+
+    public void CloseMenu() {
+        SceneManager.UnloadSceneAsync("Menu");
+        Debug.Log("closed");
     }
 }
