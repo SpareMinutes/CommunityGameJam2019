@@ -7,6 +7,7 @@ public class Menu : MonoBehaviour{
     private GameObject[] Screens;
 
     public void Start() {
+        Time.timeScale = 0f;
         Invoke("OpenMenu", 0.001f);
     }
 
@@ -45,5 +46,6 @@ public class Menu : MonoBehaviour{
 
     public void CloseMenu() {
         SceneManager.UnloadSceneAsync("Menu");
+        Time.timeScale = 1f;
     }
 }
