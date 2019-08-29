@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour{
     public float speed, jumpForce;
+    
     private Rigidbody2D rb;
+    private float x;
     
 
     void Start () {
@@ -16,13 +18,11 @@ public class Movement : MonoBehaviour{
         if(SceneManager.sceneCount != 1)
             return;
         //get inputs
-        float x = Input.GetAxisRaw("Horizontal");
+        x = Input.GetAxisRaw("Horizontal");
 
         //Eliminate rotation inertia when touching something but not moving
         rb.constraints = (x==0&&rb.GetContacts(new ContactPoint2D[10])!=0) ? RigidbodyConstraints2D.FreezeRotation : RigidbodyConstraints2D.None;
 
-        //Move the player
-        rb.velocity = new Vector3(x*speed, Mathf.Min(rb.velocity.y, 15), 0);
 
         if (Input.GetKeyDown(KeyCode.Space) && CanJump()) {
             Jump();
@@ -33,12 +33,25 @@ public class Movement : MonoBehaviour{
         }
     }
 
+    void FixedUpdate () {
+        //Move the player
+        rb.velocity = new Vector3(x*speed, Mathf.Min(rb.velocity.y, 15), 0);
+
+        //makes the jumping a little less floaty
+        if (rb.velocity.y < 0) {
+            rb.gravityScale = 2;
+        } else {
+            rb.gravityScale = 1;
+        }
+    }
+
     void Jump () {
         rb.AddForce(new Vector3(0,jumpForce,0));
     }
 
     bool CanJump(){
-        return true;
+        //return true;
+        /*
         ContactPoint2D[] contacts = new ContactPoint2D[10];
         CircleCollider2D collider = rb.GetComponent<CircleCollider2D>();
         int count = collider.GetContacts(contacts);
@@ -50,5 +63,9 @@ public class Movement : MonoBehaviour{
             }
         }
         return false;
+        */
+
+        //just makes the whole environemnt feel more sticky
+        return gameObject.GetComponent<CircleCollider2D>().IsTouching(GameObject.Find("Tilemap").GetComponent<CompositeCollider2D>());
     }
 }
