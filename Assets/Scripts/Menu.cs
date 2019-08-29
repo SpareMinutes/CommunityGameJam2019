@@ -34,12 +34,13 @@ public class Menu : MonoBehaviour{
         GameObject.Find("Collisions").GetComponent<Toggle>().isOn = Settings.GetBool("Collisions");
         GameObject.Find("PCollisions").GetComponent<Toggle>().isOn = Settings.GetBool("PCollisions");
         GameObject.Find("Narrator").GetComponent<Toggle>().isOn = Settings.GetBool("Narrator");
-        GameObject.Find("Variance").GetComponent<Toggle>().isOn = Settings.GetBool("Variance");
+        GameObject.Find("Integrity").GetComponent<Toggle>().isOn = Settings.GetBool("Integrity");
         GameObject.Find("Harmonics").GetComponent<Toggle>().isOn = Settings.GetBool("Harmonics");
 
         GameObject.Find("Mipmaps").GetComponent<Slider>().value = Settings.GetFloat("Mipmaps");
         GameObject.Find("Sounds").GetComponent<Slider>().value = Settings.GetFloat("Sounds");
         GameObject.Find("Music").GetComponent<Slider>().value = Settings.GetFloat("Music");
+        GameObject.Find("Variance").GetComponent<Slider>().value = Settings.GetFloat("Variance");
     }
 
     public void CloseMenu() {

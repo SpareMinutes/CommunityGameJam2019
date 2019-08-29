@@ -9,8 +9,8 @@ public class Settings : MonoBehaviour{
     private Dictionary<string, float> Floats;
 
     public void Start(){
-            Instance = new Settings(
-                new Dictionary<string, bool>{
+        Instance = new Settings(
+            new Dictionary<string, bool>{
                     {"VSync", false},
                     {"VBO", false},
                     {"Anaglyph", false},
@@ -23,13 +23,14 @@ public class Settings : MonoBehaviour{
                     {"Collisions", true},
                     {"PCollisions", true},
                     {"Narrator", false},
-                    {"Variance", false},
+                    {"Integrity", false},
                     {"Harmonics", false}
-                },
-                new Dictionary<string, float>{
+            },
+            new Dictionary<string, float>{
                     {"Mipmaps", 1},
                     {"Sounds", 1},
-                    {"Music", 1}
+                    {"Music", 1},
+                    {"Variance", 1}
                 }
             );
     }
