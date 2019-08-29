@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour{
     
     private Rigidbody2D rb;
     private float x;
+    private bool canJump;
     
 
     void Start () {
@@ -24,7 +25,7 @@ public class Movement : MonoBehaviour{
         rb.constraints = (x==0&&rb.GetContacts(new ContactPoint2D[10])!=0) ? RigidbodyConstraints2D.FreezeRotation : RigidbodyConstraints2D.None;
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && CanJump()) {
+        if (Input.GetKeyDown(KeyCode.Space) && canJump) {
             Jump();
         }
 
@@ -49,23 +50,14 @@ public class Movement : MonoBehaviour{
         rb.AddForce(new Vector3(0,jumpForce,0));
     }
 
-    bool CanJump(){
-        //return true;
-        /*
-        ContactPoint2D[] contacts = new ContactPoint2D[10];
-        CircleCollider2D collider = rb.GetComponent<CircleCollider2D>();
-        int count = collider.GetContacts(contacts);
-        for (int i = 0; i < 10; i++){
-            float dx = collider.bounds.center.x - contacts[i].point.x;
-            float dy = collider.bounds.center.y - contacts[i].point.y;
-            if (dy > 0 && dy >= Mathf.Abs(dx) && i < count){
-                return true;
-            }
+    void OnCollisionEnter2D (Collision2D other) {
+        
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground")) {
+            canJump = true;
         }
-        return false;
-        */
+    }
 
-        //just makes the whole environemnt feel more sticky
-        return gameObject.GetComponent<CircleCollider2D>().IsTouching(GameObject.Find("Tilemap").GetComponent<CompositeCollider2D>());
+    void OnCollisionExit2D (Collision2D other) {
+        canJump = false;
     }
 }
