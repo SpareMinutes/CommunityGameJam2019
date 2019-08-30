@@ -45,7 +45,32 @@ public class Menu : MonoBehaviour{
     }
 
     public void CloseMenu() {
+        foreach (GameObject Screen in Screens)
+            Screen.SetActive(true);
+        SaveSettings();
         SceneManager.UnloadSceneAsync("Menu");
         Time.timeScale = 1f;
+    }
+
+    public void SaveSettings() {
+        Settings.SetBool("VSync", GameObject.Find("VSync").GetComponent<Toggle>().isOn);
+        Settings.SetBool("VBO", GameObject.Find("VBO").GetComponent<Toggle>().isOn);
+        Settings.SetBool("Anaglyph", GameObject.Find("Anaglyph").GetComponent<Toggle>().isOn);
+        Settings.SetBool("RTX", GameObject.Find("RTX").GetComponent<Toggle>().isOn);
+        Settings.SetBool("Particles", GameObject.Find("Particles").GetComponent<Toggle>().isOn);
+        Settings.SetBool("Physics", GameObject.Find("Physics").GetComponent<Toggle>().isOn);
+        Settings.SetBool("PPhysics", GameObject.Find("PPhysics").GetComponent<Toggle>().isOn);
+        Settings.SetBool("GAccel", GameObject.Find("GAccel").GetComponent<Toggle>().isOn);
+        Settings.SetBool("PAccel", GameObject.Find("PAccel").GetComponent<Toggle>().isOn);
+        Settings.SetBool("Collisions", GameObject.Find("Collisions").GetComponent<Toggle>().isOn);
+        Settings.SetBool("PCollisions", GameObject.Find("PCollisions").GetComponent<Toggle>().isOn);
+        Settings.SetBool("Narrator", GameObject.Find("Narrator").GetComponent<Toggle>().isOn);
+        Settings.SetBool("Integrity", GameObject.Find("Integrity").GetComponent<Toggle>().isOn);
+        Settings.SetBool("Harmonics", GameObject.Find("Harmonics").GetComponent<Toggle>().isOn);
+
+        Settings.SetFloat("Mipmaps", GameObject.Find("Mipmaps").GetComponent<Slider>().value);
+        Settings.SetFloat("Sounds", GameObject.Find("Sounds").GetComponent<Slider>().value);
+        Settings.SetFloat("Music", GameObject.Find("Music").GetComponent<Slider>().value);
+        Settings.SetFloat("Variance", GameObject.Find("Variance").GetComponent<Slider>().value = );
     }
 }

@@ -13,11 +13,11 @@ public class Settings : MonoBehaviour{
         return PersistentVariables.Floats[name];
     }
 
-    public void ToggleBool(string name){
-        PersistentVariables.Bools[name] = !PersistentVariables.Bools[name];
+    public static void SetBool(string name, bool value){
+        PersistentVariables.Bools[name] = value;
     }
 
-    public void UpdateFloat(string name){
-        PersistentVariables.Floats[name] = GameObject.Find(name).GetComponent<Slider>().value;
+    public static void SetFloat(string name, float value){
+        PersistentVariables.Floats[name] = value;
     }
 }
