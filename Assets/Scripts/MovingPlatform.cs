@@ -23,11 +23,11 @@ public class MovingPlatform : MonoBehaviour
 
         if (direction.Equals("vertical")) {
             //move the platform in the y direction by the distance
-            gameObject.transform.position += new Vector3(0, speed*Time.fixedDeltaTime, 0);
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, speed, 0);
 
         } else if (direction.Equals("horizontal")) {
             //move the platform in the x direction by the distance
-            gameObject.transform.position += new Vector3(speed*Time.fixedDeltaTime, 0, 0);
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
 
         } else {
             Debug.Log("not a valid direction");
