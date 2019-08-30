@@ -71,6 +71,6 @@ public class Menu : MonoBehaviour{
         Settings.SetFloat("Mipmaps", GameObject.Find("Mipmaps").GetComponent<Slider>().value);
         Settings.SetFloat("Sounds", GameObject.Find("Sounds").GetComponent<Slider>().value);
         Settings.SetFloat("Music", GameObject.Find("Music").GetComponent<Slider>().value);
-        Settings.SetFloat("Variance", GameObject.Find("Variance").GetComponent<Slider>().value = );
+        Settings.SetFloat("Variance", GameObject.Find("Variance").GetComponent<Slider>().value);
     }
 }
