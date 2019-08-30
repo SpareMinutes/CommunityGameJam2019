@@ -53,7 +53,7 @@ public class Movement : MonoBehaviour{
         ContactPoint2D[] contacts = new ContactPoint2D[10];
         CircleCollider2D collider = rb.GetComponent<CircleCollider2D>();
         int count = collider.GetContacts(contacts);
-        if (SceneManager.GetActiveScene().name.Equals("Maze"))
+        if (SceneManager.GetActiveScene().name.Equals("Maze") && !Settings.GetBool("Physics"))
             return true;
         for (int i = 0; i < 10; i++) {
             float dx = collider.bounds.center.x - contacts[i].point.x;
