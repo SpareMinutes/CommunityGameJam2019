@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour{
     public float speed, jumpForce;
-    
+    public AudioClip sound;
+
     private Rigidbody2D rb;
     private float x;
     
@@ -45,7 +46,9 @@ public class Movement : MonoBehaviour{
     }
 
     void Jump () {
+        GetComponentInParent<AudioSource>().mute = false;
         rb.AddForce(new Vector3(0,jumpForce,0));
+        GetComponentInParent<AudioSource>().Play();
     }
 
     bool CanJump() {

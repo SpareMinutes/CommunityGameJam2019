@@ -655,11 +655,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4762969678029340646, guid: 1a2e4158b36eb454b9c7a2bc91b337ff,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8461119920624538513, guid: 1a2e4158b36eb454b9c7a2bc91b337ff,
         type: 3}
       propertyPath: nextScene
@@ -675,6 +670,16 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 289469250}
+    - target: {fileID: 4762969678029340646, guid: 1a2e4158b36eb454b9c7a2bc91b337ff,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465757767611530009, guid: 1a2e4158b36eb454b9c7a2bc91b337ff,
+        type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2e4158b36eb454b9c7a2bc91b337ff, type: 3}
 --- !u!1 &1894181025 stripped
@@ -5546,7 +5551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091108864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 30, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
