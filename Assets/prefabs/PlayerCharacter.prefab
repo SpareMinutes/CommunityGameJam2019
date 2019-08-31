@@ -151,7 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
   teaser: {fileID: 0}
+  secret: {fileID: 0}
   nextScene: 
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!82 &3465757767611530009
 AudioSource:
   m_ObjectHideFlags: 0
@@ -164,7 +166,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c5051283c5831894285f13999117d5ab, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 1
