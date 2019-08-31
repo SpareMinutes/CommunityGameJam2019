@@ -4028,7 +4028,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 505000485}
-        m_MethodName: CloseMenu
+        m_MethodName: TrollClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6855,8 +6855,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 505000485}
-        m_MethodName: SetActiveScreen
-        m_Mode: 3
+        m_MethodName: Controls
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8529,7 +8529,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 505000485}
-        m_MethodName: CloseMenu
+        m_MethodName: TrollClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

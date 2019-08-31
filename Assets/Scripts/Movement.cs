@@ -29,6 +29,10 @@ public class Movement : MonoBehaviour{
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (SceneManager.GetActiveScene().name.Equals("Level_01"))
+                GameObject.Find("PlayerCharacter").GetComponent<NarrateL1>().ShowMessage("Don't bother with the settings. They're broken.");
+            else if (SceneManager.GetActiveScene().name.Equals("Maze"))
+                GameObject.Find("PlayerCharacter").GetComponent<NarrateL2>().ShowMessage("Don't bother with the settings. They're broken.");
             SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
         }
     }

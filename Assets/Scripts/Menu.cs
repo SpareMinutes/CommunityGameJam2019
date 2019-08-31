@@ -88,4 +88,20 @@ public class Menu : MonoBehaviour{
         Settings.SetFloat("Music", GameObject.Find("Music").GetComponent<Slider>().value);
         Settings.SetFloat("Variance", GameObject.Find("Variance").GetComponent<Slider>().value);
     }
+
+    public void Controls() {
+        if (SceneManager.GetActiveScene().name.Equals("Level_01"))
+            GameObject.Find("PlayerCharacter").GetComponent<NarrateL1>().ShowMessage("There are no controls. This game is unplayable.");
+        else if (SceneManager.GetActiveScene().name.Equals("Maze"))
+            GameObject.Find("PlayerCharacter").GetComponent<NarrateL2>().ShowMessage("There are no controls. This game is unplayable.");
+        CloseMenu();
+    }
+
+    public void TrollClose() {
+        if (SceneManager.GetActiveScene().name.Equals("Level_01"))
+            GameObject.Find("PlayerCharacter").GetComponent<NarrateL1>().ShowMessage("Can you please stop breaking my menu?");
+        else if (SceneManager.GetActiveScene().name.Equals("Maze"))
+            GameObject.Find("PlayerCharacter").GetComponent<NarrateL2>().ShowMessage("Can you please stop breaking my menu?");
+        CloseMenu();
+    }
 }
