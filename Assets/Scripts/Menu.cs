@@ -15,6 +15,7 @@ public class Menu : MonoBehaviour{
     }
 
     public void OpenMenu() {
+        Time.timeScale = 0.0f;
         RestoreSettings();
         SetActiveScreen(0);
     }
@@ -63,6 +64,7 @@ public class Menu : MonoBehaviour{
             Screen.SetActive(true);
         SaveSettings();
         SceneManager.UnloadSceneAsync("Menu");
+        Time.timeScale = 1.0f;
     }
 
     public void SaveSettings() {
