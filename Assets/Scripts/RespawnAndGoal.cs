@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class RespawnAndGoal : MonoBehaviour {
     [SerializeField]
-    private BoxCollider2D goal, teaser  ;
+    private BoxCollider2D goal, teaser, secret;
     [SerializeField]
     private string nextScene;
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (GetComponentInParent<CircleCollider2D>().IsTouching(goal))
+        if (GetComponentInParent<CircleCollider2D>().IsTouching(goal)) {
             SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
-        if (GetComponentInParent<CircleCollider2D>().IsTouching(teaser))
+            return;
+        }
+        if (GetComponentInParent<CircleCollider2D>().IsTouching(teaser) || (SceneManager.GetActiveScene().name.Equals("Maze") && GetComponentInParent<CircleCollider2D>().IsTouching(secret)))
             return;
         //There are no other types of colliders. If this is reached, we can assume it's a respawner.
         //Only check if the player jumped into it or if they fell/got squished

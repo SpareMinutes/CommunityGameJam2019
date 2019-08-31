@@ -21,7 +21,6 @@ public class Menu : MonoBehaviour{
 
     private void Update() {
         if (!hasTurnedOffNarrator && !Narrator.GetComponent<Toggle>().isOn) {
-            Debug.Log("run");
             try {
                 GameObject.Find("PlayerCharacter").GetComponent<NarrateL1>().ShowMessage("This is my restaurant. I'm not leaving.");
             } catch (NullReferenceException e) {

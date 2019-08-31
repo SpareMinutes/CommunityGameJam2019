@@ -50,15 +50,14 @@ public class NarrateL1 : MonoBehaviour{
         switch (teaseProgress) {
             case 0:
                 ShowMessage("See? The lift is broken. No way to finish. You can go now.");
-                Invoke("Tease", 15);
+                Invoke("Tease", 20);
                 break;
             case 1:
                 ShowMessage("If you're going to stay, at least order food. Would you like a menu?");
-                Invoke("Tease", 15);
+                Invoke("Tease", 25);
                 break;
             case 2:
                 ShowMessage("It's not going to move. Its structure is too weak. There's no way to fix it.");
-                Invoke("Tease", 15);
                 break;
         }
         teaseProgress++;
