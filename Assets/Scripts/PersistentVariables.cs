@@ -16,7 +16,7 @@ public static class PersistentVariables {
                     {"PAccel", true},
                     {"Collisions", true},
                     {"PCollisions", true},
-                    {"Narrator", false},
+                    {"Narrator", true},
                     {"Integrity", false},
                     {"Harmonics", false}
                 };

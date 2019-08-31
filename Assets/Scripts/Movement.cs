@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour{
         GetComponentInParent<AudioSource>().Play();
     }
 
-    bool CanJump() {
+    public bool CanJump() {
         //return true;
         ContactPoint2D[] contacts = new ContactPoint2D[10];
         CircleCollider2D collider = rb.GetComponent<CircleCollider2D>();

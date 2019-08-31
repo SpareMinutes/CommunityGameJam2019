@@ -1,19 +1,34 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Menu : MonoBehaviour{
     [SerializeField]
     private GameObject[] Screens;
+    [SerializeField]
+    private GameObject Narrator;
+    private bool hasTurnedOffNarrator;
 
     public void Start() {
-        Time.timeScale = 0f;
         Invoke("OpenMenu", 0.001f);
     }
 
     public void OpenMenu() {
         RestoreSettings();
         SetActiveScreen(0);
+    }
+
+    private void Update() {
+        if (!hasTurnedOffNarrator && !Narrator.GetComponent<Toggle>().isOn) {
+            Debug.Log("run");
+            try {
+                GameObject.Find("PlayerCharacter").GetComponent<NarrateL1>().ShowMessage("This is my restaurant. I'm not leaving.");
+            } catch (NullReferenceException e) {
+                //GameObject.Find("PlayerCharacter").GetComponent<NarrateL2>().ShowMessage("This is my restaurant. I'm not leaving.");
+            }
+            hasTurnedOffNarrator = true;
+        }
     }
 
     public void SetActiveScreen(int id){
@@ -49,7 +64,6 @@ public class Menu : MonoBehaviour{
             Screen.SetActive(true);
         SaveSettings();
         SceneManager.UnloadSceneAsync("Menu");
-        Time.timeScale = 1f;
     }
 
     public void SaveSettings() {

@@ -15,6 +15,8 @@ public class MovingPlatform : MonoBehaviour
     }
     
     public void FixedUpdate () {
+        if (!Settings.GetBool("Integrity"))
+            return;
         float currentDistance = Vector3.Distance(startPos, gameObject.transform.position);
         if (currentDistance >= distance) {
                 //then the platform has reached the end of its path and the speed should be reversed
