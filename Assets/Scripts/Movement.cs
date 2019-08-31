@@ -8,11 +8,13 @@ public class Movement : MonoBehaviour{
     public AudioClip sound;
 
     private Rigidbody2D rb;
+    private AudioSource audioSource;
     private float x;
     
 
     void Start () {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -35,6 +37,9 @@ public class Movement : MonoBehaviour{
                 GameObject.Find("PlayerCharacter").GetComponent<NarrateL2>().ShowMessage("Don't bother with the settings. They're broken.");
             SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
         }
+
+        //use the sounds slider in the audio options to change the volume of the jump.
+        audioSource.volume = Settings.GetFloat("Sounds");
     }
 
     void FixedUpdate () {

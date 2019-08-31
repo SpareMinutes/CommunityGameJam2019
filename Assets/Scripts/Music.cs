@@ -10,4 +10,8 @@ public class Music : MonoBehaviour {
         audioData.Play();
         Debug.Log("started playing music");
     }
+
+    void Update() {
+        audioData.volume = Settings.GetFloat("Music");
+    }
 }
