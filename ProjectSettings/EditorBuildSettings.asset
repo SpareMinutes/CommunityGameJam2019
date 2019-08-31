@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Movement testing.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Maze.unity
-    guid: 9ae0baae7c37e9f4a82814f205b451ad
+    path: Assets/Scenes/Title.unity
+    guid: b8821f79f20acb84db7b2787f5aaf1ed
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 74d2d0df5623ed44ea023045e0b7ceac
+  - enabled: 1
+    path: Assets/Scenes/Level_01.unity
+    guid: d70833c538f0e4845b8ac1df707463c1
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: 9ae0baae7c37e9f4a82814f205b451ad
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: 5e344ad780a9fcc419f0a6d25cb96e7b

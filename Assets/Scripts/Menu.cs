@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
-public class Menu : MonoBehaviour{
+public class Menu : MonoBehaviour {
     [SerializeField]
     private GameObject[] Screens;
     [SerializeField]
@@ -31,8 +31,8 @@ public class Menu : MonoBehaviour{
         }
     }
 
-    public void SetActiveScreen(int id){
-        for(int i=0; i<8; i++){
+    public void SetActiveScreen(int id) {
+        for (int i = 0; i < 8; i++) {
             Screens[i].SetActive(i == id);
         }
     }
@@ -103,5 +103,13 @@ public class Menu : MonoBehaviour{
         else if (SceneManager.GetActiveScene().name.Equals("Maze"))
             GameObject.Find("PlayerCharacter").GetComponent<NarrateL2>().ShowMessage("Can you please stop breaking my menu?");
         CloseMenu();
+    }
+
+    public void Title() {
+        SceneManager.LoadScene("Title", LoadSceneMode.Single);
+    }
+
+    public void Quit() {
+        Application.Quit();
     }
 }
